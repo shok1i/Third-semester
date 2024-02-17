@@ -1,0 +1,12 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sim_1/imports/new/test.v,1700819289,verilog,,,,test,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/deshi.v,1700756073,verilog,,C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/funSefri.v,,deshi,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/funDeshi.v,1700813344,verilog,,C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sim_1/imports/new/test.v,,funDeshi,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/funMulti.v,1700772985,verilog,,C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/multi.v,,funMulti,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/funSefri.v,1700814216,verilog,,C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/sefri.v,,funSefri,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/multi.v,1700752026,verilog,,C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sim_1/imports/new/test.v,,multi,,,,,,,,
+C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sources_1/imports/new/sefri.v,1700757519,verilog,,C:/Users/shilo/Downloads/Practice_4/project_2/project_2.srcs/sim_1/imports/new/test.v,,sefri,,,,,,,,

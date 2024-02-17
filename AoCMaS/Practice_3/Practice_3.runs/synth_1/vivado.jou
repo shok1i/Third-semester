@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Nov 17 01:17:53 2023
+# Process ID: 10572
+# Current directory: C:/Users/shilo/Downloads/Practice_3/Practice_3.runs/synth_1
+# Command line: vivado.exe -log mdnf.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mdnf.tcl
+# Log file: C:/Users/shilo/Downloads/Practice_3/Practice_3.runs/synth_1/mdnf.vds
+# Journal file: C:/Users/shilo/Downloads/Practice_3/Practice_3.runs/synth_1\vivado.jou
+# Running On: SHOKII, OS: Windows, CPU Frequency: 2096 MHz, CPU Physical cores: 12, Host memory: 33636 MB
+#-----------------------------------------------------------
+source mdnf.tcl -notrace
