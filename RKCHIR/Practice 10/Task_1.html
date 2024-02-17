@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="ru">
+
+<head>
+    <title>TASK__1</title>
+
+    <style>
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        var type = 1;
+        var captchaSUM = generateRandomSum();
+        var captchaValue = generateRandomString(5);
+
+        function generateRandomString(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        function generateRandomSum() {
+            var num1 = Math.floor(Math.random() * 10);
+            var num2 = Math.floor(Math.random() * 10);
+            var sum = num1 + num2;
+            return {
+                num1: num1,
+                num2: num2,
+                sum: sum
+            };
+        }
+
+        function checkCaptcha() {
+            var userInput = document.getElementById('captcha-input').value;
+
+
+            if (isEmpty(userInput)){
+                document.getElementById('error-message-1').style.display = 'block';
+            }
+            else {
+                if (userInput === captchaValue && type === 1) {
+                    document.getElementById('captcha-form').submit();
+                    document.getElementById('done-message').style.display = 'block';
+                }
+                else if (userInput === captchaSUM.sum.toString() && type === 2) {
+                    document.getElementById('captcha-form').submit();
+                    document.getElementById('done-message').style.display = 'block';
+                }
+                else {
+                    document.getElementById('error-message').style.display = 'block';
+                    document.getElementById('captcha-value').textContent =
+                        captchaSUM.num1 + ' + ' + captchaSUM.num2 + ' = ' + captchaSUM.sum;
+
+                    type++;
+                }
+
+                if (type >= 3){
+                    document.getElementById('captcha-value').textContent = 'ОШИБКА';
+                }
+
+                document.getElementById('error-message-1').style.display = 'none';
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById('captcha-value').textContent = captchaValue;
+        }
+
+        function isEmpty(obj) {
+            for(var key in obj) {
+                if(obj.hasOwnProperty(key))
+                    return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+<body>
+
+<h1>Проверка пользователя</h1>
+<form id="captcha-form" onsubmit="event.preventDefault(); checkCaptcha();">
+    <p>Введите значение:</p>
+    <p id="captcha-value"></p>
+
+    <input type="text" id="captcha-input">
+    <button type="submit">Отправить</button>
+</form>
+
+<p id="error-message" class="error-message" style="display: none;">Неправильное значение, попробуйте еще раз.</p>
+<p id="error-message-1" class="error-message" style="display: none;">Пустой ввод.</p>
+
+</body>
+</html>

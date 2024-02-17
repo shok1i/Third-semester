@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+
+    <script>
+        function truncate(str, maxlength) {
+            if (str.length > maxlength) {
+                return str.slice(0, maxlength - 1) + "...";
+            } else {
+                return str;
+            }
+        }
+
+        window.onload = function() {
+            var card1Text = document.getElementById('card-1-text');
+            var card2Text = document.getElementById('card-2-text');
+
+            card1Text.textContent = truncate(card1Text.textContent, 16);
+            card2Text.textContent = truncate(card2Text.textContent, 16);
+        }
+    </script>
+</head>
+<!--------------------------------------------------------------------------------------------------------------------->
+<body>
+
+<h1>Усечение строк</h1>
+
+<div class="card">
+    <p id="card-1-text">Какой-то очень длинный текст, который мы должны усечь</p>
+</div>
+
+<div class="card">
+    <p id="card-2-text">Короткий текст</p>
+</div>
+
+</body>
+</html>

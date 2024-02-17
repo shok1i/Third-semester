@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url("back.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 4%;
+    border-radius: 32px;
+    border: 4px double #ccc;
+
+    background: #1e1f22;
+}
+
+.button{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2em;
+    font-size: 16px;
+    font-weight: 700;
+
+    color: rgba(206, 154, 84, 0.9);
+
+    width: 150px;
+
+    padding: 8px;
+    border-radius: 16px;
+    border: 8px double rgba(206, 154, 84, 0.9);
+
+
+    transition: 0.5s;
+}
+
+.button:hover {
+    color: #66a057;
+    border: 8px solid #66a057;
+    transform: translateY(1rem) scale(1.15);
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    letter-spacing: 0.1rem;
+    gap: 2em;
+}
+
+.input-box{
+    position: relative;
+    width: auto;
+}
+
+.name-input{
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.header{
+    color: rgba(206, 154, 84, 0.9);
+    border-bottom: 2px solid #ce9a54;
+    justify-self: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    grid-column: 1 / -1;
+}
+
+.name-label{
+    position: absolute;
+    left: 0;
+    padding: 10px 5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.4rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.last-elem{
+    grid-column: 1 / -1;
+}
+
+.name-input:valid ~ label,
+.name-input:focus ~ label {
+    transform: translateY(-1.5rem);
+    color: rgb(162, 162, 198);
+    font-size: 0.75em;
+}

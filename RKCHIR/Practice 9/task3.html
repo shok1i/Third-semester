@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task3.css">
+    <title>Task3</title>
+</head>
+<body>
+    <button class = 'btn1' onclick="changeColor()">♥</button>
+    <button class = 'btn2' onclick="toggleDrawing()">✒</button>
+    <div id="container"></div>
+
+    <script>
+
+        function changeColor(){
+            var button = document.querySelector('.btn1');
+            if(button.style.color !== 'red'){
+                button.style.color = 'red';
+            }
+            else{
+                button.style.color = 'grey';
+            }
+        }
+        var isDrawing = false;
+        function toggleDrawing() {
+            isDrawing = !isDrawing;
+            if (isDrawing) {
+                document.addEventListener('mousemove', draw);
+            } else {
+                document.removeEventListener('mousemove', draw);
+            }
+
+            var button = document.querySelector('.btn2');
+            if(button.style.color !== 'green'){
+                button.style.color = 'green';
+            }
+            else{
+                button.style.color = 'red';
+            }
+        }
+
+        function draw(event) {
+            var dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.style.left = event.clientX + 'px';
+            dot.style.top = event.clientY + 'px';
+            document.getElementById('container').appendChild(dot);
+        }
+    </script>
+</body>
+</html>

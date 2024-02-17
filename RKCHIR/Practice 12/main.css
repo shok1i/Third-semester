@@ -1,0 +1,106 @@
+body {
+    text-align: center;
+    font-family: 'Arial', Times, serif;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(210deg, rgb(53, 83, 147) 20%, rgba(53, 83, 147, 0.8) 20%, rgba(53, 83, 147, 0.6) 35%, rgba(53, 83, 147, 0.4) 35%, rgba(41, 48, 61, 0.8) 45%, rgba(31, 36, 46, 0.5) 45%, rgba(31, 36, 46, 0.8) 75%, rgba(49, 57, 73, 0.5) 75%), linear-gradient(45deg, rgba(20, 24, 31, 0.8) 0%, rgba(41, 48, 61, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #313949;
+    padding: 10px;
+    
+}
+h1, h2, h3, h3{
+    font-size: 30px;
+}
+h4{
+    margin-top: 10px;
+}
+.notif{
+    height: 100px;
+    margin-top: 20px;
+}
+button{
+    margin-bottom: 10px;
+}
+ul{
+    background-image: linear-gradient(45deg, #2c51b0, #6e36ce);
+    border-radius: 20px;
+    margin-top: 10px;
+    min-height: 100px;
+    margin: auto;
+    width: 200px;
+}
+li{
+    
+    text-align: left;
+    margin: auto;
+}
+.area{
+    position: relative;
+    background-image: linear-gradient(200deg, #2c51b0, #6e36ce);
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-radius: 20px;
+}
+img{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+}
+.notification{
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    border: 5px solid #377cb7;
+    width: fit-content;
+    padding: 5px;
+    position: relative;
+    
+}
+.notificatio::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #377cb7;
+}
+.where-click{
+    font-size: 12px;
+    gap:10px;
+    position: absolute;
+    display: flex;
+    top: 7px;
+    left: 12px;
+}
+.notif__inner{
+    /* visibility: hidden; */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.notifs .notif__btn{
+    border: none;
+    background: none;
+    position: relative;
+    display: inline-block;
+}
+
+.notifs .notif__btn i{
+    font-size: 50px;
+    color: white;
+}
+
+.notif__counter{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    padding: 0px 6px;
+    background: rgb(236, 105, 70);
+    color: white;
+    border-radius: 50%;
+}

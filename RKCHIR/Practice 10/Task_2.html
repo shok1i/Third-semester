@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="ru">
+
+<head>
+  <title>TASK__2</title>
+
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+    .value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: 4px double #265726;
+      border-radius: 16px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+
+
+  <script>
+    function Accumulator(startingValue) {
+      this.value = startingValue;
+
+      this.read = function() {
+        var newValue = parseInt(prompt("Введите новое число:"));
+        if (!isNaN(newValue)) {
+          this.value += newValue;
+          updateValue();
+        }
+      }
+    }
+
+    function updateValue() {
+      var valueElement = document.querySelector(".value");
+      valueElement.textContent = accumulator.value;
+    }
+
+    function readValue() {
+      accumulator.read();
+    }
+
+    var accumulator = new Accumulator(0);
+  </script>
+</head>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+<body>
+
+<div class="container">
+  <h1>Корзина</h1>
+  <p>Текущее значение: <span class="value">0</span></p>
+  <button class="btn" onclick="readValue()">Добавить значение</button>
+</div>
+
+</body>
+</html>

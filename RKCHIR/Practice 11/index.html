@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Практика 11</title>
+    <style>
+        /* Ваши стили */
+    </style>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Магазин</h2>
+        <div class="icon" onclick="changeProduct()">🔄</div>
+        <div class="icon" onclick="clearCart()">🗑️</div>
+        <div class="icon" onclick="increaseQuantity()">➕</div>
+        <div class="icon" onclick="filterProducts()">🔍</div>
+        <div class="icon" onclick="sortProducts(true)">⬆️</div>
+        <div class="icon" onclick="sortProducts(false)">⬇️</div>
+        <div class="icon" onclick="addRandomProduct()">➕🛒</div>
+        <div class="icon" onclick="removeProductByName()">🗑️🏷️</div>
+        <div id="cart"></div>
+        <div id="cart2"></div>
+    </div>
+
+    <script>
+        // Исходный массив товаров
+        let products = [
+            { id: 1, name: 'Товар 1', price: 10, quantity: 1 },
+            { id: 2, name: 'Товар 2', price: 20, quantity: 2 },
+            { id: 3, name: 'Товар 3', price: 30, quantity: 3 }
+        ];
+
+        // Функция для отображения корзины
+        function displayCart() {
+            const cartContainer = document.getElementById('cart');
+            cartContainer.innerHTML = '';
+            products.forEach(product => {
+                cartContainer.innerHTML += `<p>${product.name} - ${product.quantity} шт. - ${product.price * product.quantity} руб.</p>`;
+            });
+        }
+
+        // 1. Функция для изменения товара в корзине
+        function changeProduct() {
+            const productName = prompt('Введите имя товара:');
+            const productIndex = products.findIndex(product => product.name === productName);
+
+            if (productIndex !== -1) {
+                const newName = prompt('Введите новое имя товара:');
+                const newQuantity = parseInt(prompt('Введите количество товара:'));
+                const newPrice = parseFloat(prompt('Введите цену товара:').replace(',', '.'));
+
+                if (!isNaN(newQuantity) && !isNaN(newPrice)) {
+                    products[productIndex].name = newName;
+                    products[productIndex].quantity = newQuantity;
+                    products[productIndex].price = newPrice;
+                    displayCart();
+                } else {
+                    alert('Некорректный ввод. Попробуйте ещё раз.');
+                }
+            } else {
+                alert(`Товар с именем ${productName} не найден`);
+            }
+        }
+
+        // 1.2. Функция для очистки корзины
+        function clearCart() {
+              products = [];
+            displayCart();
+        }
+
+        // Пример поиска индекса элемента по имени
+        function findProductIndexByName(name) {
+            return products.findIndex(product => product.name === name);
+        }
+
+        // 2. Функция для увеличения количества товара
+        function increaseQuantity() {
+            const productName = prompt('Введите название товара для увеличения:');
+            const index = findProductIndexByName(productName);
+            products[index].quantity += 1;
+            displayCart();
+        }
+
+        // 3. Функция для фильтрации товаров
+        function filterProducts() {
+            const a = parseInt(prompt('Введите значение a:', '0'));
+            const b = parseInt(prompt('Введите значение b:', '100'));
+            let filteredProducts = products.filter(product => product.price >= a && product.price <= b);
+            const cartContainer = document.getElementById('cart2');
+            cartContainer.innerHTML = '<p>Отфильтрованный массив товаров</p>';
+            filteredProducts.forEach(product => {
+                cartContainer.innerHTML += `<p>${product.name} - ${product.quantity} шт. - ${product.price * product.quantity} руб.</p>`;
+            });
+        }
+
+        // 4. Функция для сортировки товаров
+        function sortProducts(ascending) {
+            products.sort((a, b) => (ascending ? a.price * a.quantity - b.price * b.quantity : b.price * b.quantity - a.price * a.quantity));
+            displayCart();
+        }
+
+        // 5. Функция для добавления случайного товара
+        function addRandomProduct() {
+            let unique = false;
+            let newProduct;
+
+            while (!unique) {
+                newProduct = { id: products.length + 1, name: `Товар ${products.length + 1}`, price: Math.floor(Math.random() * 50) + 10, quantity: 1 };
+                unique = !products.some(product => product.name === newProduct.name);
+            }
+
+            products.push(newProduct);
+            displayCart();
+        }
+
+        // 6. Функция для удаления товара по названию
+        function removeProductByName() {
+            const productName = prompt('Введите название товара для удаления:');
+            products = products.filter(product => product.name !== productName);
+            displayCart();
+        }
+        // Инициализация отображения корзины
+        displayCart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #3498db, #2c3e50);
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px;
+}

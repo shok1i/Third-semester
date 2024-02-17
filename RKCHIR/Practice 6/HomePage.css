@@ -1,0 +1,509 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    box-shadow: 0 -10px 5px rgba(0, 0, 0, .16),
+                0  5px  10px rgba(0, 0, 0, .16);
+}
+
+header li{
+    list-style: none;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.notification{
+    width: 64px;
+    padding: 0 10px;
+    margin: 0 32px;
+}
+
+.notification li{
+    margin: 10px 0;
+}
+
+.notification li{
+    width: 100%;
+    padding: 0 16px;
+}
+
+@media (min-width:720px){
+    .pc-label{
+        visibility: visible;
+    }
+    .mobile-label{
+        visibility: hidden;
+        height: 0;
+    }
+
+    .head{
+        background-color: burlywood;
+        justify-content: center;
+        padding: 10px 0;
+        align-items: center;
+        display: flex;
+    }
+
+    .head p{
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .pc-label{
+        justify-content: space-between;
+        padding: 20px 275px;
+        display: flex;
+        align-items: center;
+        background-color: whitesmoke;
+    }
+    .pc-label .logo{
+        color: #000;
+        text-decoration: none;
+    }
+    .pc-label .navigation{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .pc-label .navigation li{
+        list-style: none;
+        margin: 0 10px;
+    }
+    .pc-label .navigation li a{
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+        transition: 0.25s;
+    }
+
+    .content {
+        padding: 0 200px;
+        font-size: 32px;
+    }
+}
+@media (max-width:720px){
+    .pc-label{
+        visibility: hidden;
+        height: 0;
+    }
+    .mobile-label{
+        visibility: visible;
+    }
+
+    .content {
+        font-size: 24px;
+        padding: 0 32px;
+    }
+
+    .mobile-label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 64px;
+        background-color: whitesmoke;
+    }
+    .head{
+        background-color: burlywood;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0;
+        display: flex;
+    }
+    .site-head{
+        display: flex;
+    }
+    .mobile-label .logo{
+        color: #000;
+        text-decoration: none;
+        margin-top: 10px;
+        font-size: 32px;
+        transition:0.5s;
+        height: 33px;
+    }
+    .mobile-label .logo:hover{
+        font-size: 31px;
+    }
+
+    .burger-menu{
+        box-shadow: 0 -1px #252525;
+        visibility: hidden;
+        margin: 10px 0;
+        height: 0;
+        width: 100%;
+    }
+    .burger-menu ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .burger-menu ul li{
+        margin: 10px 0;
+    }
+    .burger-menu ul li a{
+        color: #000;
+        text-decoration: none;
+        transition:0.5s;
+        box-shadow: 0 1px #000000;
+    }
+
+    .burger-menu ul li a:hover{
+        margin-left: 6px;
+        color: #101010;
+        box-shadow: 0 2px #101010;
+    }
+    .mobile-label input[type=checkbox] {
+        visibility: hidden;
+    }
+    .mobile-label input[type=checkbox]:checked ~ label{
+        transform: rotate(2deg);
+        font-size: 24px;
+    }
+    .mobile-label input[type=checkbox]:checked ~ .burger-menu{
+        visibility: visible;
+        height: 120px;
+    }
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+.products{
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+.product{
+    margin: 16px;
+    padding: 32px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid rgba(200, 200, 200, .75);
+    display: flex;
+    flex-direction: column;
+
+    transition: .64s ease-in-out;
+
+    box-shadow:
+            10px 10px 15px rgba(70, 70, 70, 0.12),
+            -10px -10px 15px rgba(255, 255, 255, 0.5)
+}
+
+.product:hover{
+    /*transform: translateY(2px);*/
+    box-shadow:
+            inset 10px 10px 15px rgba(70, 70, 70, 0.12),
+            inset -10px -10px 15px rgba(255, 255, 255, 0.5)
+}
+
+.product-info{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    padding: 15px 0;
+    color: rgb(50, 50, 50);
+}
+
+.product-buy{
+    justify-content: space-between;
+    align-content: center;
+    display: flex;
+}
+
+
+.price{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.add-to-cart{
+    font-size: 16px;
+}
+
+.add-to-wish{
+    font-size: 16px;
+}
+
+
+
+
+.btn {
+    text-align: center;
+    cursor: pointer;
+
+    position: relative;
+    color: black;
+    width: 256px;
+    height: 64px;
+    line-height: 64px;
+    transition: all 0.3s;
+}
+
+.btn-one {
+    margin: 10px;
+    color: #000000;
+    transition: all 0.3s;
+    position: relative;
+}
+.btn-one span {
+    transition: all 0.3s;
+}
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(0,0,0,0.5);
+    border-bottom-color: rgba(0,0,0,0.5);
+    transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+.btn-one:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+    opacity: 0;
+    transform: scale(0.1, 1);
+}
+
+
+
+.btn::before, .btn::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.btn-two::before, .btn-two::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.50s;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.btn-two:hover::after {
+    animation-name: rotatecw;
+    animation-duration: 7.5s;
+}
+.btn-two:hover::before {
+    animation-name: rotateccw;
+    animation-duration: 10s;
+}
+.btn-two:hover::after, .btn-two:hover::before {
+    left: 37%;
+    height: 100%;
+    width: 26%;
+    top: 0;
+
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotatecw {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotateccw {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}
+
+
+
+
+.container {
+    width: 400px;
+    height: 400px;
+}
+
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+
+.button {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.button:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+}
+
+.button:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.button span {
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+
+/* Стили для элемента уведомлений */
+.notification {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Стили для списка уведомлений */
+.notification-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+/* Стили для показа списка при наведении */
+.notification:hover .notification-list {
+    display: block;
+}
+
+.buttons-label{
+    display: flex;
+    gap: 30px;
+}
+
+.cards{
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.img1{
+    color: rgba(0,0,0);
+    margin-right:15%;
+}
+.img1::before{
+    position: absolute;
+    content: '';
+    background-image:url('Images/Kurukuru Kururing.gif');
+    background-size: 400px;
+    background-repeat: no-repeat;
+    height: 70%;
+    width: 400px;
+    opacity: 1;
+    z-index:2;
+}
+.img1:hover::before{
+    opacity: 0.5;
+    transition: 1s;
+    color:black;
+    transform: translateY(50px);
+}
+
+.img2{
+    color: rgba(0,0,0);
+    margin-right:15%;
+}
+.img2::before{
+    position: absolute;
+    content: '';
+    background-image:url('Images/mythiversary.gif');
+    background-size: 400px;
+    background-repeat: no-repeat;
+    height: 70%;
+    width: 400px;
+    opacity: 1;
+    z-index:2;
+}
+.img2:hover::before{
+    opacity: 0.5;
+    transition: 1s;
+    color:black;
+    transform: translateY(50px);
+}
+
+.img3{
+    color: rgba(0,0,0);
+    margin-right:15%;
+}
+.img3::before{
+    position: absolute;
+    content: '';
+    background-image:url('Images/Squishable Plague Lab Sticker.jpg');
+    background-size: 400px;
+    background-repeat: no-repeat;
+    height: 70%;
+    width: 400px;
+    opacity: 1;
+    z-index:2;
+}
+.img3:hover::before{
+    opacity: 0.5;
+    transition: 1s;
+    color:black;
+    transform: translateY(50px);
+}

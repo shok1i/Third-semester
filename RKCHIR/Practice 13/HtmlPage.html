@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Практика 13</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/84c5ed9ab4.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="parallax-container">
+        <div class="parallax" id="parallax-bg"></div>
+        <div class="content" id="dynamic-content">
+            <h1>Тут можно увидеть эффект Параллакса</h1>
+            <p>Прокрутите страницу вниз.</p>
+        </div>
+    </div>
+
+    <section class="center-picture">
+        <h4>Где курсор .png</h4>
+        <div class="area">
+            <img src="img.jpg" alt="IMAGE">
+            <div class="where-click">
+
+                <p class="clickX">x = <span></span> px    </p>
+                <p class="clickY">y = <span></span> px</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <h4>Уведомления?!</h4>
+    <section class="close-notif">
+
+        <div class="notifs">
+            <button class="notif__btn" type="button">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notif__counter"></div>
+            </button>
+            <div class="notif__inner">
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
